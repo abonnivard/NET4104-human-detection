@@ -8,7 +8,7 @@ erase esp32 S3: #Make sure to change the port to the correct one
 
 flash esp32 S3: #Make sure to change the port and the .bin name to the correct one
 	#link to download the .bin file: https://micropython.org/download/ESP32_GENERIC_S3/
-	esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 esp32-idf3-20200902-v1.13.bin
+	esptool.py --chip esp32s3 --port /dev/ttyUSB0 write_flash -z 0x1000 esp32-idf3-20200902-v1.13.bin
 
 ampy command : #Make sure to change the port to the correct one
 	ampy --port /dev/ttyUSB0 ls
@@ -22,3 +22,6 @@ ampy command : #Make sure to change the port to the correct one
 # ampy --port /dev/ttyUSB0 mkdir namefile.py to create a directory in the esp32
 # ampy --port /dev/ttyUSB0 rmdir namefile.py to remove a directory from the esp32
 # ampy --port /dev/ttyUSB0 reset to reset the esp32
+
+
+clean env :
