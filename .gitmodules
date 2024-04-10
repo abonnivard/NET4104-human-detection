@@ -3,4 +3,4 @@
 	url = https://github.com/espressif/esp-idf.git
 [submodule "esp-csi"]
 	path = esp-csi
-	url = https://github.com/espressif/esp-csi
+	url = https://github.com/espressif/esp-csi.git
