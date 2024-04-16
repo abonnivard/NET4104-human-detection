@@ -11,7 +11,10 @@ start-data:
 	. env/bin/activate && python3 human-detection-analyse.py
 
 start-click:
-	. env/bin/activate && python3 click.py
+	. env/bin/activate && python3 click_automatique.py
+
+start-ML:
+	. env/bin/activate && python3 ML.py
 
 clean:
 	rm -R env/
