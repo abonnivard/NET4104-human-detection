@@ -1,0 +1,437 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.28.1/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.28.1/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.28.1/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/project.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/targets.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/idf.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/build.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/third_party/GetGitRevisionDescription.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Internal/CheckFlagCommonConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/git_submodules.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindGit.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/tool_version_check.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/kconfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/ExternalProject.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Users/adrien/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/component.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/utilities.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/depgraph.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/targets.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/ldgen.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/dfu.cmake"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/version.cmake"
+		},
+		{
+			"path" : "esp-idf/.git/HEAD"
+		},
+		{
+			"path" : "esp-idf/tools/cmake/third_party/GetGitRevisionDescription.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/git-data/grabRef.cmake"
+		},
+		{
+			"path" : "esp-idf/.git/refs/heads/master"
+		},
+		{
+			"path" : "esp-idf/components/bootloader/subproject/components/micro-ecc/micro-ecc/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/bootloader/subproject/components/micro-ecc/micro-ecc/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/bt/controller/lib_esp32/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/bt/controller/lib_esp32/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/bt/controller/lib_esp32c2/esp32c2-bt-lib/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/bt/controller/lib_esp32c2/esp32c2-bt-lib/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/bt/controller/lib_esp32c3_family/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/bt/controller/lib_esp32c3_family/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/bt/controller/lib_esp32c5/esp32c5-bt-lib/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/bt/controller/lib_esp32c5/esp32c5-bt-lib/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/bt/controller/lib_esp32c6/esp32c6-bt-lib/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/bt/controller/lib_esp32c6/esp32c6-bt-lib/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/bt/controller/lib_esp32h2/esp32h2-bt-lib/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/bt/controller/lib_esp32h2/esp32h2-bt-lib/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/bt/esp_ble_mesh/lib/lib/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/bt/esp_ble_mesh/lib/lib/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/bt/host/nimble/nimble/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/bt/host/nimble/nimble/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/cmock/CMock/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/cmock/CMock/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/esp_coex/lib/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/esp_coex/lib/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/esp_phy/lib/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/esp_phy/lib/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/esp_wifi/lib/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/esp_wifi/lib/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/heap/tlsf/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/heap/tlsf/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/json/cJSON/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/json/cJSON/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/lwip/lwip/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/lwip/lwip/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/mbedtls/mbedtls/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/mbedtls/mbedtls/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/mqtt/esp-mqtt/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/mqtt/esp-mqtt/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/openthread/lib/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/openthread/lib/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/openthread/openthread/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/openthread/openthread/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/protobuf-c/protobuf-c/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/protobuf-c/protobuf-c/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/spiffs/spiffs/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/spiffs/spiffs/HEAD"
+		},
+		{
+			"path" : "esp-idf/components/unity/unity/.git"
+		},
+		{
+			"path" : "esp-idf/.git/modules/components/unity/unity/HEAD"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/Users/adrien/Desktop/NET4104/NET4104-human-detection/cmake-build-debug",
+		"source" : "/Users/adrien/Desktop/NET4104/NET4104-human-detection"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}
