@@ -20,8 +20,9 @@ CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 //Path to a program.
 CMAKE_AR:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ar
 
-//No help, variable specified on the command line.
-CMAKE_BUILD_TYPE:UNINITIALIZED=Debug
+//Choose the type of build, options are: None Debug Release RelWithDebInfo
+// MinSizeRel ...
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable colored diagnostics throughout.
 CMAKE_COLOR_DIAGNOSTICS:BOOL=ON
@@ -95,8 +96,8 @@ CMAKE_INSTALL_PREFIX:PATH=/usr/local
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ld
 
-//No help, variable specified on the command line.
-CMAKE_MAKE_PROGRAM:UNINITIALIZED=/Users/adrien/Applications/CLion Nova.app/Contents/bin/ninja/mac/aarch64/ninja
+//make program
+CMAKE_MAKE_PROGRAM:FILEPATH=/Users/adrien/Applications/CLion Nova.app/Contents/bin/ninja/mac/aarch64/ninja
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -235,6 +236,15 @@ Project_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/Users/adrien/Desktop/NET4104/NET4104-human-detection
+
+//Value Computed by CMake
+mon_projet_BINARY_DIR:STATIC=/Users/adrien/Desktop/NET4104/NET4104-human-detection/cmake-build-debug
+
+//Value Computed by CMake
+mon_projet_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+mon_projet_SOURCE_DIR:STATIC=/Users/adrien/Desktop/NET4104/NET4104-human-detection
 
 
 ########################

@@ -14,7 +14,7 @@ start-click:
 	. env/bin/activate && python3 click_automatique.py
 
 start-ML:
-	. env/bin/activate && python3 ML.py
+	. env/bin/activate && python3 apprentissage.py
 
 clean:
 	rm -R env/

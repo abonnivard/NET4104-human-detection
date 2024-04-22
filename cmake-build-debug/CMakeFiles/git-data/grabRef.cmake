@@ -18,7 +18,7 @@ set(HEAD_HASH)
 file(READ "/Users/adrien/Desktop/NET4104/NET4104-human-detection/cmake-build-debug/CMakeFiles/git-data/HEAD" HEAD_CONTENTS LIMIT 1024)
 
 string(STRIP "${HEAD_CONTENTS}" HEAD_CONTENTS)
-set(GIT_DIR "/Users/adrien/Desktop/NET4104/NET4104-human-detection/.git/modules/esp-idf")
+set(GIT_DIR "/Users/adrien/Desktop/NET4104/NET4104-human-detection/esp-idf/.git")
 # handle git-worktree
 if(EXISTS "${GIT_DIR}/commondir")
 	file(READ "${GIT_DIR}/commondir" GIT_DIR_NEW LIMIT 1024)

@@ -1,6 +1,3 @@
-[submodule "esp-idf"]
-	path = esp-idf
-	url = https://github.com/espressif/esp-idf.git
 [submodule "esp-csi"]
 	path = esp-csi
 	url = https://github.com/espressif/esp-csi.git
