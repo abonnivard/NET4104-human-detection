@@ -6,4 +6,4 @@ idf.py set-target esp32s3
 
 
 #port à changer
-idf.py flash -b 921600 -p /dev/cu.usbserial-1110
+idf.py flash -b 921600 -p /dev/cu.usbserial-113

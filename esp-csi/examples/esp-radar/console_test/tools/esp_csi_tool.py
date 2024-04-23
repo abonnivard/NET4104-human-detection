@@ -155,7 +155,7 @@ def base64_encode_bin(list_data):
     for i in range(len(list_data)):
         if list_data[i] < 0:
             list_data[i] = 256 + list_data[i]
-    # print(list_data)
+    print(list_data)
 
     str_data = "test"
     try:
@@ -183,7 +183,6 @@ def evaluate_data_send(serial_queue_write, folder_path):
     tcpCliSock.connect((device_info_series['ip'], device_info_series['port']))
 
     file_name_list = sorted(os.listdir(folder_path))
-    print(file_name_list)
     for file_name in file_name_list:
         file_path = folder_path + os.path.sep + file_name
         data_pd = pd.read_csv(file_path)
@@ -720,7 +719,7 @@ class DataGraphicalWindow(QMainWindow, Ui_MainWindow):
     def command_boot(self):
         command = f"radar --csi_output_type LLFT --csi_output_format base64"
         self.serial_queue_write.put(command)
-
+        print('serial_test :' + command)
         if self.checkBox_router_auto_connect.isChecked() and len(self.lineEdit_router_ssid.text()) > 0:
             self.command_router_connect()
 
@@ -732,6 +731,7 @@ class DataGraphicalWindow(QMainWindow, Ui_MainWindow):
                    f" --predict_buff_size {self.spinBox_predict_buffer_size.text()}" +
                    f" --predict_outliers_number {self.spinBox_predict_outliers_number.text()}")
         self.serial_queue_write.put(command)
+        print('serial_test :' + command)
 
     def command_router_connect(self):
         if self.pushButton_router_connect.text() == "connect":
@@ -742,6 +742,7 @@ class DataGraphicalWindow(QMainWindow, Ui_MainWindow):
             if len(self.lineEdit_router_password.text()) >= 8:
                 command += " --password " + self.lineEdit_router_password.text()
             self.serial_queue_write.put(command)
+            print('serial_test :' + command)
         else:
             self.pushButton_router_connect.setText("connect")
             self.pushButton_router_connect.setStyleSheet("color: black")
@@ -849,10 +850,12 @@ class DataGraphicalWindow(QMainWindow, Ui_MainWindow):
             command += " --train_add"
 
         self.serial_queue_write.put(command)
+        print('serial_test :' + command)
 
     def command_train_stop(self):
         command = "radar --train_stop"
         self.serial_queue_write.put(command)
+        print('serial_test :' + command)
 
     def spinBox_train_duration_show(self):
         time_temp = self.timeEdit_train_duration.time()
@@ -912,12 +915,14 @@ class DataGraphicalWindow(QMainWindow, Ui_MainWindow):
 
             command = "radar --csi_stop"
             self.serial_queue_write.put(command)
+            print('serial_test :' + command)
         else:
             self.pushButton_evaluate_csi_start.setText("csi stop")
             self.pushButton_evaluate_csi_start.setStyleSheet("color: red")
 
             command = "radar --csi_start"
             self.serial_queue_write.put(command)
+            print('serial_test :' + command)
 
     def pushButton_evaluate_start_show(self):
         print(f"{self.lineEdit_evaluate_open_folder.text()}")
@@ -1114,7 +1119,7 @@ class DataHandleThread(QThread):
                     color, series['tag'], series['timestamp'], series['data'])
                 self.signal_log_msg.emit(data)
             elif series['type'] == 'FAIL_EVENT':
-                print(f"Fial: {series['data']}")
+                #print(f"Fial: {series['data']}")
 
                 self.signal_exit.emit()
                 time.sleep(1)
@@ -1131,14 +1136,14 @@ def serial_handle(queue_read, queue_write, port):
         ser = serial.Serial(port=port, baudrate=2000000,
                             bytesize=8, parity='N', stopbits=1, timeout=0.1)
     except Exception as e:
-        print(f"serial_handle: {e}")
+        #print(f"serial_handle: {e}")
         data_series = pd.Series(index=['type', 'data'],
                                 data=['FAIL_EVENT', "Failed to open serial port"])
         queue_read.put(data_series)
         sys.exit()
         return
 
-    print("open serial port: ", port)
+    #print("open serial port: ", port)
 
     # Wait a second to let the port initialize
     ser.flushInput()
@@ -1256,7 +1261,7 @@ def serial_handle(queue_read, queue_write, port):
                             # print('============== queue_full ==========')
                             pass
                         else:
-                            # print("data_series", len(data_series), type(data_series), data_series)
+                            print("data_series", len(data_series), type(data_series), data_series)
                             queue_read.put(data_series)
                     else:
                         queue_read.put(data_series)

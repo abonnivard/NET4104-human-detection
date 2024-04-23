@@ -20,7 +20,7 @@ def effectuer_clic_et_jouer_son(i):
 try:
     i=0
     time.sleep(15)
-    while compteur<32:
+    while compteur<10:
         if i==2:
             i=0
         effectuer_clic_et_jouer_son(i)
