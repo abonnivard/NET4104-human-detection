@@ -4,7 +4,7 @@ import random
 from playsound import playsound
 
 # Définir l'intervalle de temps entre chaque clic (en secondes)
-interval_temps = 10
+interval_temps = 15
 compteur = 0
 son_liste = ["stop.m4a", "go.m4a"]
 # Fonction pour effectuer un clic à l'emplacement actuel de la souris et jouer un son
@@ -20,7 +20,7 @@ def effectuer_clic_et_jouer_son(i):
 try:
     i=0
     time.sleep(15)
-    while compteur<10:
+    while compteur<20:
         if i==2:
             i=0
         effectuer_clic_et_jouer_son(i)

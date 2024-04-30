@@ -4,3 +4,4 @@ matplotlib
 pyautogui
 playsound
 scikit-learn
+seaborn

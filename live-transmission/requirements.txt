@@ -8,6 +8,7 @@ pyqtgraph
 
 pandas
 numpy
+matplotlib
 
 # scipy
 scipy
@@ -16,4 +17,6 @@ scipy
 pyserial==3.5
 
 # Other libraries
+scikit-learn
+seaborn
 

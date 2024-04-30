@@ -13,8 +13,10 @@ start-data:
 start-click:
 	. env/bin/activate && python3 click_automatique.py
 
-start-ML:
-	. env/bin/activate && python3 apprentissage.py
+start-gen_dataset:
+	. env/bin/activate && python3 analyze.py
+
+
 
 clean:
 	rm -R env/
