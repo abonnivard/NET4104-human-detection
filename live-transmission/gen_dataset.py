@@ -2,6 +2,10 @@ import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
 
+'''
+Ce fichier permet de générer un jeu de données à partir de plusieurs fichiers CSV présents dans les dossier "enregistrement" et "new_enregistrement".
+'''
+
 
 d = pd.read_csv("../python/enregistrement/allonge_0.csv")
 d2 = pd.read_csv("../python/enregistrement/debout_0.csv")

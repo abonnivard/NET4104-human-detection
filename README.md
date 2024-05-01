@@ -1,4 +1,4 @@
-## NET4104-human-detection
+# NET4104-human-detection
 
 Projet du cours NET4104 - Internet sans fil : concepts, technologies et architectures
 
@@ -133,9 +133,8 @@ Grâce à des  essais avec MicroPython, nous nous sommes plongés dans la décou
 Concernant les solutions existantes, nous avons commencé par réunir différents articles scientifiques qui pouvaient nous permettre de détecter des personnes à l’aide du CSI (Channel State Information). Nous nous sommes appuyés sur les sources [1] [2] et [3] afin de comprendre le fonctionnement d’une telle solution.
 Les différents évènements qui se produisent dans un environnement dans lequel nous aurions mis en place un système de récepteur / émetteur sont détectés grâce à des seuils sur le RSSI [1]. En effet, le but est d’abord de déterminer la fréquence du bruit constant pour une pièce donnée, puis d’analyser le spectre obtenu grâce au CSI (par une transformation dans le domaine des fréquences, la méthode n’est cependant pas plus détaillée dans notre source). Nous voyons ici sur ces spectres une très nette différence entre les diverses chutes. 
 
-![Diagramme de fréquence de RSSI](/Images/freq_chutes.png "Extrait du papier FallDeFi: Ubiquitous Fall Detection using Commodity Wi-Fi Devices")
+![Diagramme de fréquence de RSSI](Images/freq_chutes.png "Extrait du papier FallDeFi: Ubiquitous Fall Detection using Commodity Wi-Fi Devices")
 
-*Image 1 : Extrait du papier FallDeFi: Ubiquitous Fall Detection using Commodity Wi-Fi Devices*
 
 
 Ensuite, nous avons trouvé une solution fournie sur un dépôt git qui est la suivante [4] https://github.com/espressif/esp-csi (plus précisément dans examples/esp-radar). 
@@ -145,24 +144,21 @@ Le projet ESP-CSI se base sur deux langages de programmation. Une première part
 
 ### Premiers tests avec la solution existante
 
-![Interface](/Images/interface.png "Interface de la solution existante")
+![Interface](Images/interface.png "Interface de la solution existante")
 
-*Image 2 : Interface de la solution existante*
 
 La prise en main de la solution git sur nos machines n’a pas été évidente. Nous avons tout d’abord eu du mal à comprendre le projet en lui-même car nous avons découvert plus tard que beaucoup de morceaux avaient été générés automatiquement à l’aide d’un autre outil que nous ne connaissions pas. La documentation de ce projet se concentre également uniquement sur l’installation et l’explication pratique de l’interface graphique, sans mention autre de la structure du code. Il a donc été difficile pour nous de réellement savoir ce que nous pouvions modifier ou non dans le projet afin de nous l’approprier et d’en faire quelque chose d’un peu différent. 
 
 
 Après avoir croisé avec différentes sources ([1] et [2]) particulièrement, nous avons donc compris que l’auteur s’appuyait sur des variation du RSSI à partir d’un certain seuil et que c’était comme cela qu’il était capable fournir a priori des informations précises sur ce qu’il se passait dans la pièce. En effet, l’interface nous permet de recueillir des données liées uniquement à des évènements comme la présence d’une personne, la chute d’une personne, les mouvements d’une personne, le fait qu’elle est statique ou non. Malheureusement, nous avons eu l’impression que l’application n’était pas très efficace pour discerner exactement de quel type de mouvement il s’agissait. Toutefois, elle était particulièrement réactive pour détecter si oui ou non il y avait une personne présente dans la pièce, nous nous sommes donc quand même appuyé sur ces travaux.
 
-![Variation du rssi en direct](/Images/ondes.png "Variation du RSSI en direct")
+![Variation du rssi en direct](Images/ondes.png "Variation du RSSI en direct")
 
-*Image 3 : Variation du RSSI en direct*
 
 Techniquement, nous avons dans un premier temps, configuré deux microcontrôleurs, l'un en tant que récepteur (receiver) et l'autre en tant qu'émetteur (sender), pour évaluer la communication entre les deux. Par la suite, nous avons effectué des tests plus avancés en utilisant un seul microcontrôleur connecté à notre point d'accès mobile via l'un de nos smartphones. Ces étapes nous ont permis de mieux comprendre les capacités et les performances de notre système dans différents scénarios d'utilisation. L’interface graphique que donne le projet git permet de voir en direct la détection potentielle d’humains, mais également d’enregistrer ces données dans des csv.
 
-![Détection de mouvements humains](/Images/detection_gens.png "Détectiond de mouvements humains")
+![Détection de mouvements humains](Images/detection_gens.png "Détection de mouvements humains")
 
-*Image 4 : Détection de mouvements humains*
 
 ### Récolte de données
 
@@ -194,7 +190,7 @@ On pourrait donc étendre ces travaux en mettant en place une méthode de signal
 
 Afin d’analyser nos données et déduire de la présence ou non d’une personne et de son statut (debout ou couché), nous avons fait le choix d'entraîner un réseau de neurones de type arbre de décision. Pour ce faire, nous avons joué avec plusieurs jeu de données enregistrés par nos soins et nous avons donc obtenu plusieurs IA "différentes". Afin de faicliter l'affichage sur nos graphe, nous avons décidé de symboliser la position "debout" par l'entier 1, la position "coucher" par l'entier 0 et "rien" par -1. Voici le graphe de décision du premier réseau de neurones :
 
-![Graphe de decision IA 1](/Images/Arbre_decisions_12_3etats.png "Graphe de décision IA 1")
+![Graphe de decision IA 1](Images/Arbre_decisions_12_3etats.png "Graphe de décision IA 1")
 
 Cette IA 98.208% de réussite sur les données de tests, mais on peut aussi forcer le réseau de neurones à avoir moins de profondeur, ce qui réduit sa précision à 95%, ce que nous avons fait ici.
 Sur les nœuds, nous pouvons globalement voir que l’IA s’appuie sur différentes valeurs dans le vecteur data pour ensuite aller effectuer différents choix. Ce graphe est typiquement tronqué car nous avons limité la profondeur maximale de l’IA. l’information principale à retenir de cette figure est qu’il lui faut un grand nombre de choix avant de réussir à déterminer précisément parmi seulement 3 états. Nous pouvons questionner la pertinence d’utiliser de l’IA pour déterminer ce genre d’états, étant donné que la méthode par détermination de seuil sur le RSSI permet une détection moyenne plus précise que l’IA, même si elle paraît moins adaptable aux premiers abords.
@@ -207,15 +203,13 @@ Ici, cette IA permet de déterminer si une trame écrite sur le fichier csv corr
 Malheureusement, notre IA présente de nombreux défauts que nous allons détailler. 
 Lorsqu’on lui donne certains enregistrements, elle se trompe totalement de catégorisation. Mais d’autres fois, ce n’est pas le cas comme nous le voyons sur ces deux figures : 
 
-![Resultat sur test debout_1](/Images/resultat_debout_1.png)
+![Resultat sur test debout_1](Images/resultat_debout_1.png "Analyse par l’IA de l’enregistrement supposé être une personne debout")
 
-*Image 5 : Analyse par l’IA de l’enregistrement supposé être une personne debout*
 
 Ici, nous aurions dû avoir d'une façon quasi constante la valeur 1, hors nous voyons qu'il y a un changement de valleur extrêmement fréquent qui parasite la lecture du graphique et donc ne permet pas du tout de savoir si il y a une personne et dans quel état elle est. Le taux de réussite de la prédiction par rapport à ce qu'on attendait (une valeur constante à 1) est de 30% environ
 
-![Resultat sur test debout_2](/Images/Resultat_debout_2_clean.png)
+![Resultat sur test debout_2](Images/Resultat_debout_2_clean.png "Analyse par l’IA de l’enregistrement personne debout")
 
-*Image 6 : Analyse par l’IA de l’enregistrement personne debout*
 
 Ici, contrairement au premier cas, nous voyons de manière assez nette qu'il y avait une personne et qu'elle était debout sur l'enregistrement. Le taux de réussite de détection ici est d'environ 90%
 
@@ -225,15 +219,14 @@ En nettoyant alors notre set de données pour ne prendre que les enregistrements
 
 Nous avons également testé de simplement donner le ‘rssi’ comme donne à l’IA au lieu de lui donner le vecteur data, pour voir si cela ne l'aidait pas à mieux détecter ce qu'il se passait. Nous obtenons, après nettoyage des données, un graphe de décision beaucoup plus simple.
 
-![Graphe de décision IA 2](/Images/rssi_propre.png "Graphe de décision RSSI")
+![Graphe de décision IA 2](Images/rssi_propre.png "Graphe de décision pour une IA qui analyse le RSSI"){ width=50% }
 
-*Image 7 : Graphe de décision pour une IA qui analyse le RSSI*
+
 
 Nous observons ici que l’IA cherche différents seuils de RSSI, d’une manière un peu plus précise que ce que ferait un humain, pour ensuite pouvoir déterminer l’issue. Nous pouvons quand même remarquer que sur la décision la plus profonde, elle semble ne pas faire de choix puisqu’elle attribue quoi qu’il arrive la valeur -1 à la classe. De même pour le côté à droite, en vert. Cela est sûrement justifiée avec l’entropie, puisqu’elle va chercher à avoir une entropie optimale (paramètre donné explicitement lors de la création de l’IA). Cet entraînement nous donne des résultats bien plus satisfaisants comme nous le voyons ici sur la classification de l’enregistrement “debout_5”, avec un taux de réussite de 98,2%.
 
-![Detection par le RSSI de debout_5](/Images/detection_rssi_propre_debout_5.png "Detection par le RSSI de debout_5")
+![Detection par le RSSI de debout_5](Images/detection_rssi_propre_debout_5.png "Détection via le RSSI du même enregistrement que celui de la figure 7"){ width=50% }
 
-*Image 8 : Détection via le RSSI du même enregistrement que celui de l'image 7*
 
 Malheureusement, même avec la méthode sur le RSSI, l'IA continuait de présenter certains défauts de détection, nous avons donc décidé de refaire nos enregistrements.
 
@@ -241,13 +234,12 @@ Afin de sélectionner les enregistrement qui parraissaient le plus propres, nous
 
 Voici le nouveau graphe de décision que nous avons obtenu suite à cela :
 
-![Dernier graphe de décision](/Images/arbre_de_decision%20clean.png)
+![Dernier graphe de décision](Images/arbre_de_decision_clean.png "Dernier graphe de décision"){ width=50% }
 
 On peut observer que la profondeur de cet arbre semble beaucoup plus pertinente que précédemment. Nous remarquons que l’IA fait réellement des choix sans aller chercher à apprendre par cœur ses données d’entraînement. Grâce à ce nouvel entraînement, les résultats sont beaucoup plus convaincants. Ici, la prédiction sur un enregistrement de personne allongée.
 
-![Prediciton avec la dernière IA sur enregistrement personne allongée](/Images/test%20allonge_5%20clean.png)
+![Prediciton avec la dernière IA sur enregistrement personne allongée](Images/test_allonge_5_clean.png "Prédiction sur enregistrement d'une personne allongée (valeur 0)")
 
-*Image 9 : Prédiction sur enregistrement d'une personne allongée (valeur 0)*
 
 On remarque cette fois que l’IA classe bien les données de l’enregistrement et on obtient une nette tendance à montrer qu’elles montrent une personne couchée (valeur 0), avec un taux de réussite de 90%. 
 
@@ -277,7 +269,14 @@ Toutefois, nous avons désormais de nombreuses pistes d'amélioration possible :
     - ajouter une interprétation directe des résultats pour prévenir lorsque l'on suppose que la personne a chuté.
 
 
+# Références
 
+
+[1] [FallDeFi: Ubiquitous Fall Detection using Commodity Wi-Fi Device](https://dl.acm.org/doi/10.1145/3161183) \
+[2] [WiFi Sensing with Channel State Information: A Survey](https://gzhou.pages.wm.edu/wp-content/blogs.dir/5736/files/sites/13/2017/12/WiFiSenseSurvey_CSUR19.pdf) \
+[3] [Seeing through walls with WIFI… How to extract Wifi CSI data with a RPI Compute Module 4 | by Nezare Chafni](https://blog.chafni.com/seeing-through-walls-with-wifi-how-to-extract-wifi-csi-data-with-a-rpi-compute-module-4-ec36c7d0c1da#9741)   \
+[4] https://github.com/espressif/esp-csi \
+[5] https://github.com/espressif/esp-idf/tree/master/examples/system/console
 
 
 
