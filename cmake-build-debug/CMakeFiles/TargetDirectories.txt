@@ -1,3 +1,0 @@
-/Users/adrien/Desktop/NET4104/NET4104-human-detection/cmake-build-debug/CMakeFiles/NET4104-human-detection.elf.dir
-/Users/adrien/Desktop/NET4104/NET4104-human-detection/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/adrien/Desktop/NET4104/NET4104-human-detection/cmake-build-debug/CMakeFiles/rebuild_cache.dir
