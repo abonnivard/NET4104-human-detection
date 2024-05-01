@@ -13,7 +13,6 @@ from datetime import datetime
 from multiprocessing import Process, Queue
 import signal as signal_key
 
-#Pour la partie IA
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -27,14 +26,14 @@ from sklearn.model_selection import train_test_split
 
 
 def train_model():
+    '''
+    Permet de créer un modèle d'IA pour prédire la position de l'utilisateur
+    :return: le modèle d'IA
+    '''
     #isolation du vecteur "data" de taille 109
     X = pd.concat([d, d2, d3])['data'].apply(ast.literal_eval)
     X_data = np.array([np.array(x) for x in X])
     X_data = np.vstack(X_data)
-
-
-    #version avec le rssi
-    X_rssi = pd.concat([d, d2, d3])[['rssi']]
 
     #creation des étiquettes
     y = pd.concat([d, d2, d3])['State']
@@ -71,6 +70,11 @@ CSI_DATA_COLUMNS_NAMES = ["type", "seq", "timestamp", "taget_seq", "taget", "mac
                           "rx_state", "len", "first_word_invalid", "data"]
 
 def base64_decode_bin(str_data):
+    '''
+    Décode les données base64 et les convertit en données binaires
+    :param str_data: data à convertir
+    :return: la liste des données binaires converties
+    '''
     try:
         bin_data = base64.b64decode(str_data)
     except Exception as e:
@@ -87,6 +91,11 @@ def base64_decode_bin(str_data):
 
 
 def command_router_connect(queue_write, queue_read):
+    '''
+    Permet de se connecter au routeur.
+    :param queue_write: queue to write data
+    :param queue_read: queue to read data
+    '''
     command = "wifi_config --ssid " + ("\"%s\"" % "iPhone A") + " --password " + 'testtest'
     print(f"command_router_connect: {command}")
     ser.write(command)
@@ -94,6 +103,14 @@ def command_router_connect(queue_write, queue_read):
 
 
 def serial_handle(queue_read, queue_write, port, clf):
+    '''
+    Récupère les données du port série et les traite en prenant une décision sur chacun d'entre elle.
+    :param queue_read: queue to read data
+    :param queue_write: queue to write data
+    :param port: port number of serial
+    :param clf: model
+    '''
+
     try:
         ser = serial.Serial(port=port, baudrate=2000000,
                             bytesize=8, parity='N', stopbits=1, timeout=0.1)
@@ -128,6 +145,8 @@ def serial_handle(queue_read, queue_write, port, clf):
     taget_seq_last = 1000
 
     time.sleep(0.01)
+
+    acc = []
 
     while True:
         if not queue_write.empty():
@@ -191,8 +210,30 @@ def serial_handle(queue_read, queue_write, port, clf):
                             break
 
                         data_series['data'] = csi_raw_data
-                        print(data_series['data'])
-                        print(clf.predict([data_series['data']]))
+                        prediction = clf.predict([data_series['data']])
+                        acc.append(prediction[0])
+                        if len(acc) > 10:
+                            sum_1, sum_0, sum_2 = 0, 0, 0
+                            for i in acc:
+                                if i == 1:
+                                    sum_1 += 1
+                                elif i == 0:
+                                    sum_0 += 1
+                                elif i == -1:
+                                    sum_2 += 1
+                            if sum_1 > sum_0 and sum_1 > sum_2:
+                                liste_decisions.append(1)
+                            elif sum_0 > sum_1 and sum_0 > sum_2:
+                                liste_decisions.append(0)
+                            else:
+                                liste_decisions.append(-1)
+                            acc = []
+
+                        update_plot(liste_decisions)
+
+
+                        #print(f"Prediction: {prediction}")
+                        #print(liste_decisions)
 
                         data_series['taget'] = 'someone'
 
@@ -236,13 +277,30 @@ def serial_handle(queue_read, queue_write, port, clf):
                 queue_read.put(data_series)
 
 
+liste_decisions = []
+MAX_DECISIONS = 50
+
+def update_plot(decisions):
+    '''
+    Met à jour le graphe en temps réel avec les décisions prises
+    :param decisions:
+    :return:
+    '''
+    plt.clf()
+    # Sélectionner les dernières décisions à afficher
+    start_index = max(0, len(decisions) - MAX_DECISIONS)
+    decisions_to_display = decisions[start_index:]
+    # Tracer le graphe avec les décisions sélectionnées
+    plt.plot(range(start_index, len(decisions)), decisions_to_display, marker='o', linestyle='-')
+    plt.xlabel('Time')
+    plt.ylabel('Decision')
+    plt.title('Real-time Decisions')
+    plt.pause(0.01)
 
 
 if __name__ == '__main__':
 
     clf = train_model()
-
-
 
 
     if sys.version_info < (3, 6):
@@ -264,7 +322,6 @@ if __name__ == '__main__':
     signal_key.signal(signal_key.SIGTERM, quit)
 
 
-
     serial_handle_process = Process(target=serial_handle, args=(
         serial_queue_read, serial_queue_write, serial_port, clf))
     print(f"serial_handle_process: {serial_handle_process}")
@@ -273,3 +330,4 @@ if __name__ == '__main__':
 
 
     serial_handle_process.join()
+
