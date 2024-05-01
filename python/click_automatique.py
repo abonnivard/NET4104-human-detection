@@ -1,7 +1,13 @@
 import pyautogui
 import time
-import random
 from playsound import playsound
+
+
+
+'''
+Script pour effectuer un clic à l'emplacement actuel de la souris et jouer un son à intervalles réguliers.
+Ce programme a été utilisé pour pouvoir déclencher l'enregistrement des données de capteurs à intervalles réguliers à partir de l'interface graphique du projet esp-csi.
+'''
 
 # Définir l'intervalle de temps entre chaque clic (en secondes)
 interval_temps = 15

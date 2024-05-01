@@ -3,8 +3,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
+
+'''
+Analyse des données de capteurs pour détecter la présence d'humains et leur posture.
+Ce programme constitue un exemple simplifié de l'analyse des données de capteurs pour détecter la présence d'humains et leur posture.
+Dans notre projet, il est une première approche à ce qui a été finalement fait.
+'''
+
 # Fonction pour détecter la présence d'humains
 def rssi_method(data):
+    '''
+    Analyse les données RSSI pour détecter la présence d'humains
+    :param data:
+    '''
     # Supprimer les colonnes non pertinentes
     data = data[['seq', 'timestamp', 'mac', 'rssi', 'data']]
     sum = 0
@@ -23,6 +34,10 @@ def rssi_method(data):
 
 # Fonction pour détecter la posture
 def detect_posture(csi_data):
+    '''
+    Analyse les datas CSI pour détecter la posture des humains
+    :param csi_data:
+    '''
     # Définir des seuils adaptatifs pour la posture debout et allongée
     standing_threshold = 7  # Seuil pour la posture debout
     lying_threshold = 3     # Seuil pour la posture allongée
