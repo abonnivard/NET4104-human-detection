@@ -47,11 +47,18 @@ Sur MacOS le port UART est généralement `/dev/cu.SLAB_USBtoUART`
 ```bash
 ls /dev/cu.*
 ```
+Une fois le port trouvé, il faut se rendre dans le fichier `csi-recv.sh` et modifier la ligne suivante:
+
+Par exemple si le port UART est `/dev/cu.usbserial-2130` la ligne devrait ressembler à ceci:
 
 ```bash
-cd esp-csi/examples/console_test
-idf.py set-target esp32s3
-idf.py flash -b 921600 -p /dev/ttyUSB1
+idf.py flash -b 921600 -p /dev/cu.usbserial-2130
+```
+Ensuite, exécuter les commandes suivantes:
+
+```bash
+make install-esp-idf
+make csi-recv
 ```
 
 * Pour accèder à l'interface du projet esp-csi, exécuter la commande suivante:
