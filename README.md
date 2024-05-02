@@ -85,11 +85,12 @@ pip install -r requirements.txt
 python esp_csi_tool.py -p /dev/ttyUSB1
 ```
 
+Une fois dans l'interface, connecter l'esp-32 à un réseau wifi en cliquant sur le bouton `Connect` et en renseignant les informations de votre réseau wifi.
+
 * Lacement de la transmission des données.
 
-1. Remplacer les valeurs de `SSID` et `PASSWORD` dans le fichier `live-transmission.py` par les valeurs de votre réseau wifi
 
-2. Exécuter les commandes suivantes:
+Exécuter les commandes suivantes:
 
 ```bash
 cd live-transmission/
@@ -219,13 +220,13 @@ En nettoyant alors notre set de données pour ne prendre que les enregistrements
 
 Nous avons également testé de simplement donner le ‘rssi’ comme donne à l’IA au lieu de lui donner le vecteur data, pour voir si cela ne l'aidait pas à mieux détecter ce qu'il se passait. Nous obtenons, après nettoyage des données, un graphe de décision beaucoup plus simple.
 
-![Graphe de décision IA 2](Images/rssi_propre.png "Graphe de décision pour une IA qui analyse le RSSI"){ width=50% }
+![Graphe de décision IA 2](Images/rssi_propre.png "Graphe de décision pour une IA qui analyse le RSSI")
 
 
 
 Nous observons ici que l’IA cherche différents seuils de RSSI, d’une manière un peu plus précise que ce que ferait un humain, pour ensuite pouvoir déterminer l’issue. Nous pouvons quand même remarquer que sur la décision la plus profonde, elle semble ne pas faire de choix puisqu’elle attribue quoi qu’il arrive la valeur -1 à la classe. De même pour le côté à droite, en vert. Cela est sûrement justifiée avec l’entropie, puisqu’elle va chercher à avoir une entropie optimale (paramètre donné explicitement lors de la création de l’IA). Cet entraînement nous donne des résultats bien plus satisfaisants comme nous le voyons ici sur la classification de l’enregistrement “debout_5”, avec un taux de réussite de 98,2%.
 
-![Detection par le RSSI de debout_5](Images/detection_rssi_propre_debout_5.png "Détection via le RSSI du même enregistrement que celui de la figure 7"){ width=50% }
+![Detection par le RSSI de debout_5](Images/detection_rssi_propre_debout_5.png "Détection via le RSSI du même enregistrement que celui de la figure 7")
 
 
 Malheureusement, même avec la méthode sur le RSSI, l'IA continuait de présenter certains défauts de détection, nous avons donc décidé de refaire nos enregistrements.
@@ -234,7 +235,7 @@ Afin de sélectionner les enregistrement qui parraissaient le plus propres, nous
 
 Voici le nouveau graphe de décision que nous avons obtenu suite à cela :
 
-![Dernier graphe de décision](Images/arbre_de_decision_clean.png "Dernier graphe de décision"){ width=50% }
+![Dernier graphe de décision](Images/arbre_de_decision_clean.png "Dernier graphe de décision")
 
 On peut observer que la profondeur de cet arbre semble beaucoup plus pertinente que précédemment. Nous remarquons que l’IA fait réellement des choix sans aller chercher à apprendre par cœur ses données d’entraînement. Grâce à ce nouvel entraînement, les résultats sont beaucoup plus convaincants. Ici, la prédiction sur un enregistrement de personne allongée.
 
