@@ -66,26 +66,23 @@ Une fois le port trouvé, il faut se rendre dans le fichier `csi-recv.sh` et mod
 Par exemple si le port UART est `/dev/cu.usbserial-2130` la ligne devrait ressembler à ceci:
 
 ```bash
-idf.py flash -b 921600 -p /dev/cu.usbserial-2130
+cd esp-idf && . ./export.sh && idf.py flash -b 921600 -p /dev/cu.usbserial-2130
 ```
 Ensuite, exécuter les commandes suivantes:
 
 ```bash
-make install-esp-idf
 make csi-recv
 ```
 
-* Pour accèder à l'interface du projet esp-csi, exécuter la commande suivante:
+* Pour accéder à l'interface du projet esp-csi, exécuter la commande suivante:
 
 ```bash
-cd esp-csi/examples/console_test/tools
-# Install python related dependencies
-pip install -r requirements.txt
-# Graphical display
-python esp_csi_tool.py -p /dev/ttyUSB1
+cd esp-idf && . ./export.sh && cd ../esp-csi/examples/esp-radar/console_test/tools && pip3 install -r requirements.txt && python3 esp_csi_tool.py -p /dev/cu.usbserial-2130
 ```
 
-Une fois dans l'interface, connecter l'esp-32 à un réseau wifi en cliquant sur le bouton `Connect` et en renseignant les informations de votre réseau wifi.
+Une fois dans l'interface, connecter l'esp-32 à un réseau wifi en cliquant sur le bouton `Connect` et en renseignant les informations de votre réseau wifi. \
+Réaliser ensuite un étalonnage en cliquant sur le bouton `start` et en suivant les instructions.
+![Interface de calibrage](Images/calibrate.png "Interface de calibrage")
 
 * Lacement de la transmission des données.
 
@@ -93,10 +90,7 @@ Une fois dans l'interface, connecter l'esp-32 à un réseau wifi en cliquant sur
 Exécuter les commandes suivantes:
 
 ```bash
-cd live-transmission/
-make setup
-make install
-make start-transmission
+cd live-transmission/ && make setup && make install && make start-transmission
 ```
 
 ## Comment régler certains problèmes courants ?
@@ -257,6 +251,9 @@ La fonction main agit comme point d'entrée principal du script. Elle analyse le
 
 Une fois cela réalisé, il nous a fallu y ajouter la partie analyse de données. Pour cela, nous avons importé le code existant dans le fichier live-transmission.py.
 Le modèle s'entraîne avant même que la communication commence. Ensuite, chaque vecteur est évalué avec l’IA générée ce qui nous permet de savoir en tant réelle le comportement d’un humain en déplacement.
+
+Il est a noter que ce que nous obtenons semble assez aléatoire. Cela est peut-être du au fait que nous analysons des données une par une au lieu de considérer des paquets plus complet comme c'est le cas avec les fichiers csv.
+L'IA ne semble donc pas très adaptée à une analyse en flux continu, mais plutôt à une analyse de données déjà enregistrées.
 
 ### Conclusion
 
